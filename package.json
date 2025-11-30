@@ -1,0 +1,39 @@
+{
+  "name": "trimeter",
+  "version": "0",
+  "description": "Trimeter a web based UMS application for our IMR coursework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwainXDL/trimeter.git"
+  },
+  "keywords": [
+    "UMS",
+    "DB"
+  ],
+  "author": "Dwain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwainXDL/trimeter/issues"
+  },
+  "homepage": "https://github.com/dwainXDL/trimeter#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "express-validator": "^7.3.1",
+    "mssql": "^12.1.1",
+    "multer": "^2.0.2",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
