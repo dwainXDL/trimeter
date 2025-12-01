@@ -3,7 +3,7 @@
 
 **Trimeter** a web based UMS (Utility Management System) application for our IMR coursework.
 
-![TriMeter Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![TriMeter Logo](https://trimeterstorage.blob.core.windows.net/images/WhatsApp%20Image%202025-12-01%20at%2013.31.36.jpeg)
 
 ## 🚀 Badges
 
