@@ -4,9 +4,15 @@
   "description": "Trimeter a web based UMS application for our IMR coursework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --forceExit",
+    "test:watch": "jest --watch",
     "start": "node index.js",
     "dev": "nodemon index.js"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": ["/node_modules/"],
+    "testMatch": ["**/tests/**/*.test.js"]
   },
   "repository": {
     "type": "git",
@@ -34,6 +40,9 @@
     "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "nodemon": "^3.1.11"
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.1.4",
+    "tailwindcss": "^3.4.18"
   }
 }

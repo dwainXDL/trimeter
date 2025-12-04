@@ -7,6 +7,9 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Trust proxy (Azure)
+app.set('trust proxy', 1);
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -17,8 +20,12 @@ app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+    proxy: true,
     cookie: {
-        maxAge: 1000 * 60 * 60 * 12 // user logged out after 12 hours
+        secure: true,
+        httpOnly: true,
+        maxAge: 1000 * 60 * 60 * 12, // 12 hours
+        sameSite: 'lax'
     }
 }));
 
@@ -32,32 +39,14 @@ app.use((req, res, next) => {
     next();
 });
 
-// Test route
-app.get('/', (req, res) => {
-    res.send('TriMeter IS RUNNING!');
-});
-
-// Test DB
-app.get('/test-db', async (req, res) => {
-    try {
-        const { poolPromise } = require('./config/database');
-        const pool = await poolPromise;
-        const result = await pool.request().query('SELECT @@VERSION AS version');
-        res.json({
-            message: 'Database Connected!',
-            version: result.recordset[0].version
-        });
-    }
-    catch (err) {
-        res.status(500).json({
-            message: 'Database connection failed!',
-            error: err.message
-        });
-    }
-});
+// Routes will be added here
+// TODO: Add auth routes, customer routes, etc.
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-    console.log(`Test DB: http://localhost:${PORT}/test-db`);
+    console.log(`TriMeter server running on port ${PORT}`);
+    console.log(`Database: ${process.env.DB_DATABASE}`);
 });
+
+// Export for testing
+module.exports = app;

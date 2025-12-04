@@ -25,7 +25,7 @@ const poolPromise = new sql.ConnectionPool(config)
         return pool;
     })
     .catch(err => {
-        console.error('DATABASE CONNECTION FAILED!', err);
+        console.error('DATABASE CONNECTION FAILED!\n', err);
         process.exit(1);
     });
 
