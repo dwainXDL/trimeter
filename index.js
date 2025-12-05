@@ -39,8 +39,22 @@ app.use((req, res, next) => {
     next();
 });
 
-// Routes will be added here
-// TODO: Add auth routes, customer routes, etc.
+// Routes
+// Login page
+app.get('/login', (req, res) => {
+    if (req.session.user) {
+        return res.redirect('/dashboard');
+    }
+    res.render('login', { error: null });
+});
+
+// Root redirect to login
+app.get('/', (req, res) => {
+    if (req.session.user) {
+        return res.redirect('/dashboard');
+    }
+    res.redirect('/login');
+});
 
 // Start server
 app.listen(PORT, () => {

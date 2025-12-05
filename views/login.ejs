@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - TriMeter UMS</title>
+    <link href="/css/output.css" rel="stylesheet">
+    <style>
+        /* Column transitions */
+        .grid-column {
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* When column is active, change grid layout */
+        .grid-column.active {
+            grid-template-rows: 0.5fr 2fr 0.5fr !important;
+        }
+
+        /* Content section transitions */
+        .content-section {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .grid-column.active .content-section {
+            display: flex !important;
+            opacity: 1 !important;
+            transform: scale(1) !important;
+        }
+
+        /* Custom scrollbar */
+        .content-section::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .content-section::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .content-section::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .content-section::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="overflow-hidden font-sans bg-gray-300">
+    <!-- Background Image Grid -->
+    <div class="grid grid-cols-4 gap-4 h-screen p-4">
+        <!-- Column 1 - T, E -->
+        <div class="grid-column grid grid-rows-2 gap-4" id="col-1">
+            <div class="grid-item relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-300 group"
+                 role="button" tabindex="0"
+                 onclick="showLogin(1, this)"
+                 onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(1, this)">
+                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800"
+                     alt="Technician"
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
+                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">T</div>
+            </div>
+
+            <div class="content-section hidden flex-col items-center justify-start gap-6 opacity-0 scale-95 p-6 overflow-y-auto">
+                <div class="bg-white/95 backdrop-blur-md rounded-3xl p-8 w-full text-center shadow-2xl">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Field officer</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">"Our dedicated field officers play a vital role in ensuring accurate and timely meter readings.</p>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">They visit households across the community, physically inspecting each meter to guarantee reliable data.</p>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">Their commitment keeps the entire utility management process efficient, transparent, and trustworthy."</p>
+                    <p class="italic text-gray-800 font-medium mt-6 mb-8">Dedication that drives accuracy.</p>
+                    <button class="px-16 py-4 bg-black text-white border-none rounded-full text-lg font-semibold cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-800 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
+                            onclick="window.location.href='/login'">login</button>
+                </div>
+            </div>
+
+            <div class="grid-item relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-300 group"
+                 role="button" tabindex="0"
+                 onclick="showLogin(1, this)"
+                 onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(1, this)">
+                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800"
+                     alt="Electrical"
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
+                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">E</div>
+            </div>
+        </div>
+
+        <!-- Column 2 - R, T -->
+        <div class="grid-column grid grid-rows-2 gap-4" id="col-2">
+            <div class="grid-item relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-300 group"
+                 role="button" tabindex="0"
+                 onclick="showLogin(2, this)"
+                 onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(2, this)">
+                <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800"
+                     alt="Customer Service"
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
+                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">R</div>
+            </div>
+
+            <div class="content-section hidden flex-col items-center justify-start gap-6 opacity-0 scale-95 p-6 overflow-y-auto">
+                <div class="bg-white/95 backdrop-blur-md rounded-3xl p-8 w-full text-center shadow-2xl">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Field officer</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">"Our dedicated field officers play a vital role in ensuring accurate and timely meter readings.</p>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">They visit households across the community, physically inspecting each meter to guarantee reliable data.</p>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">Their commitment keeps the entire utility management process efficient, transparent, and trustworthy."</p>
+                    <p class="italic text-gray-800 font-medium mt-6 mb-8">Dedication that drives accuracy.</p>
+                    <button class="px-16 py-4 bg-black text-white border-none rounded-full text-lg font-semibold cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-800 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
+                            onclick="window.location.href='/login'">login</button>
+                </div>
+            </div>
+
+            <div class="grid-item relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-300 group"
+                 role="button" tabindex="0"
+                 onclick="showLogin(2, this)"
+                 onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(2, this)">
+                <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800"
+                     alt="Technical"
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
+                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">T</div>
+            </div>
+        </div>
+
+        <!-- Column 3 - I, E -->
+        <div class="grid-column grid grid-rows-2 gap-4" id="col-3">
+            <div class="grid-item relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-300 group"
+                 role="button" tabindex="0"
+                 onclick="showLogin(3, this)"
+                 onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(3, this)">
+                <img src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8c6?w=800"
+                     alt="Inspector"
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
+                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">I</div>
+            </div>
+
+            <div class="content-section hidden flex-col items-center justify-start gap-6 opacity-0 scale-95 p-6 overflow-y-auto">
+                <div class="bg-white/95 backdrop-blur-md rounded-3xl p-8 w-full text-center shadow-2xl">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Field officer</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">"Our dedicated field officers play a vital role in ensuring accurate and timely meter readings.</p>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">They visit households across the community, physically inspecting each meter to guarantee reliable data.</p>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">Their commitment keeps the entire utility management process efficient, transparent, and trustworthy."</p>
+                    <p class="italic text-gray-800 font-medium mt-6 mb-8">Dedication that drives accuracy.</p>
+                    <button class="px-16 py-4 bg-black text-white border-none rounded-full text-lg font-semibold cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-800 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
+                            onclick="window.location.href='/login'">login</button>
+                </div>
+            </div>
+
+            <div class="grid-item relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-300 group"
+                 role="button" tabindex="0"
+                 onclick="showLogin(3, this)"
+                 onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(3, this)">
+                <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800"
+                     alt="Aerial Worker"
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
+                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">E</div>
+            </div>
+        </div>
+
+        <!-- Column 4 - M, R -->
+        <div class="grid-column grid grid-rows-2 gap-4" id="col-4">
+            <div class="grid-item relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-300 group"
+                 role="button" tabindex="0"
+                 onclick="showLogin(4, this)"
+                 onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(4, this)">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800"
+                     alt="Maintenance"
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
+                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">M</div>
+            </div>
+
+            <div class="content-section hidden flex-col items-center justify-start gap-6 opacity-0 scale-95 p-6 overflow-y-auto">
+                <div class="bg-white/95 backdrop-blur-md rounded-3xl p-8 w-full text-center shadow-2xl">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Field officer</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">"Our dedicated field officers play a vital role in ensuring accurate and timely meter readings.</p>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">They visit households across the community, physically inspecting each meter to guarantee reliable data.</p>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">Their commitment keeps the entire utility management process efficient, transparent, and trustworthy."</p>
+                    <p class="italic text-gray-800 font-medium mt-6 mb-8">Dedication that drives accuracy.</p>
+                    <button class="px-16 py-4 bg-black text-white border-none rounded-full text-lg font-semibold cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-800 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
+                            onclick="window.location.href='/login'">login</button>
+                </div>
+            </div>
+
+            <div class="grid-item relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-300 group"
+                 role="button" tabindex="0"
+                 onclick="showLogin(4, this)"
+                 onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(4, this)">
+                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800"
+                     alt="Repair"
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
+                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">R</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let activeColumn = null;
+
+        function showLogin(columnNum, clickedElement) {
+            const clickedColumn = document.getElementById('col-' + columnNum);
+            const allColumns = document.querySelectorAll('.grid-column');
+            const allItems = document.querySelectorAll('.grid-item');
+
+            // If clicking the same column, toggle it
+            if (activeColumn === columnNum) {
+                clickedColumn.classList.remove('active');
+                allItems.forEach(item => item.classList.remove('outline', 'outline-4', 'outline-blue-500'));
+                activeColumn = null;
+                return;
+            }
+
+            // Remove active from all columns
+            allColumns.forEach(col => col.classList.remove('active'));
+            allItems.forEach(item => item.classList.remove('outline', 'outline-4', 'outline-blue-500'));
+
+            // Add active to clicked column
+            clickedColumn.classList.add('active');
+            clickedElement.classList.add('outline', 'outline-4', 'outline-blue-500');
+            activeColumn = columnNum;
+        }
+
+        // Initial animation on load
+        document.addEventListener('DOMContentLoaded', function() {
+            const gridItems = document.querySelectorAll('.grid-item');
+            gridItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                setTimeout(() => {
+                    item.style.transition = 'opacity 0.5s ease';
+                    item.style.opacity = '1';
+                }, index * 100);
+            });
+        });
+
+        // Click anywhere outside to close
+        document.addEventListener('click', function(e) {
+            if (activeColumn && !e.target.closest('.grid-column')) {
+                document.querySelectorAll('.grid-column').forEach(col => col.classList.remove('active'));
+                document.querySelectorAll('.grid-item').forEach(item => item.classList.remove('outline', 'outline-4', 'outline-blue-500'));
+                activeColumn = null;
+            }
+        });
+
+        // Keyboard support for closing
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && activeColumn !== null) {
+                document.querySelectorAll('.grid-column').forEach(col => col.classList.remove('active'));
+                document.querySelectorAll('.grid-item').forEach(item => item.classList.remove('outline', 'outline-4', 'outline-blue-500'));
+                activeColumn = null;
+            }
+        });
+    </script>
+</body>
+</html>
