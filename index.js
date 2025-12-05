@@ -48,6 +48,38 @@ app.get('/login', (req, res) => {
     res.render('login', { error: null });
 });
 
+// Admin login page
+app.get('/admin-login', (req, res) => {
+    if (req.session.user) {
+        return res.redirect('/dashboard');
+    }
+    res.render('admin-login', { error: null });
+});
+
+// Field Officer login page
+app.get('/field-officer-login', (req, res) => {
+    if (req.session.user) {
+        return res.redirect('/dashboard');
+    }
+    res.render('field-officer-login', { error: null });
+});
+
+// Cashier login page
+app.get('/cashier-login', (req, res) => {
+    if (req.session.user) {
+        return res.redirect('/dashboard');
+    }
+    res.render('cashier-login', { error: null });
+});
+
+// Manager login page
+app.get('/manager-login', (req, res) => {
+    if (req.session.user) {
+        return res.redirect('/dashboard');
+    }
+    res.render('manager-login', { error: null });
+});
+
 // Root redirect to login
 app.get('/', (req, res) => {
     if (req.session.user) {
