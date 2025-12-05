@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - TriMeter UMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="/css/output.css" rel="stylesheet">
     <style>
         /* Column transitions */
@@ -13,7 +16,7 @@
 
         /* When column is active, change grid layout */
         .grid-column.active {
-            grid-template-rows: 0.5fr 2fr 0.5fr !important;
+            grid-template-rows: 0.8fr 2fr 0.5fr !important;
         }
 
         /* Content section transitions */
@@ -46,30 +49,31 @@
         }
     </style>
 </head>
-<body class="overflow-hidden font-sans bg-gray-300">
+<body class="overflow-hidden bg-white" style="font-family: 'Raleway', sans-serif;">
     <!-- Background Image Grid -->
     <div class="grid grid-cols-4 gap-4 h-screen p-4">
         <!-- Column 1 - T, E -->
-        <div class="grid-column grid grid-rows-2 gap-4" id="col-1">
+        <div class="grid-column grid gap-4" id="col-1" style="grid-template-rows: 1.5fr 1.2fr; ">
             <div class="grid-item relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-300 group"
                  role="button" tabindex="0"
                  onclick="showLogin(1, this)"
                  onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(1, this)">
-                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800"
+                <img src="/images/1.jpg"
                      alt="Technician"
-                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
-                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">T</div>
+                     class="w-full h-full object-cover brightness-90 transition-all duration-300 group-hover:scale-105 group-hover:brightness-100">
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-5xl font-light text-white pointer-events-none z-50 transition-all duration-600"
+                     style="text-shadow: 3px 3px 25px rgba(0, 0, 0, 0.9); font-size: 3rem; color: #FFFFFF; display: block; font-weight: 300;">T</div>
             </div>
 
             <div class="content-section hidden flex-col items-center justify-start gap-6 opacity-0 scale-95 p-6 overflow-y-auto">
-                <div class="bg-white/95 backdrop-blur-md rounded-3xl p-8 w-full text-center shadow-2xl">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Field officer</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">"Our dedicated field officers play a vital role in ensuring accurate and timely meter readings.</p>
-                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">They visit households across the community, physically inspecting each meter to guarantee reliable data.</p>
-                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">Their commitment keeps the entire utility management process efficient, transparent, and trustworthy."</p>
-                    <p class="italic text-gray-800 font-medium mt-6 mb-8">Dedication that drives accuracy.</p>
+                <div >
+                    <h2 class="text-3xl font-light text-gray-900 mb-8 text-center" style="font-weight: 300;">Field officer</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">"Our dedicated field officers play a vital role in ensuring accurate and timely meter readings.</p>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">They visit households across the community, physically inspecting each meter to guarantee reliable data.</p>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">Their commitment keeps the entire utility management process efficient, transparent, and trustworthy."</p>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">Dedication that drives accuracy.</p>
                     <button class="px-16 py-4 bg-black text-white border-none rounded-full text-lg font-semibold cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-800 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
+                            style="margin-left: 1.5cm;"
                             onclick="window.location.href='/login'">login</button>
                 </div>
             </div>
@@ -78,35 +82,36 @@
                  role="button" tabindex="0"
                  onclick="showLogin(1, this)"
                  onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(1, this)">
-                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800"
+                <img src="/images/5.jpg"
                      alt="Electrical"
-                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
-                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">E</div>
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-100">
+                <div class="absolute top-8 left-1/2 -translate-x-1/2 text-5xl font-light text-white pointer-events-none z-50 transition-all duration-600"
+                     style="text-shadow: 3px 3px 25px rgba(0, 0, 0, 0.9); font-size: 3rem; color: #FFFFFF; display: block; font-weight: 300;">E</div>
             </div>
         </div>
 
         <!-- Column 2 - R, T -->
-        <div class="grid-column grid grid-rows-2 gap-4" id="col-2">
+        <div class="grid-column grid gap-4" id="col-2" style="grid-template-rows: 1.5fr 1.4fr;">
             <div class="grid-item relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-300 group"
                  role="button" tabindex="0"
                  onclick="showLogin(2, this)"
                  onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(2, this)">
-                <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800"
+                <img src="/images/2.jpg"
                      alt="Customer Service"
-                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
-                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">R</div>
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-100">
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-5xl font-light text-white pointer-events-none z-50 transition-all duration-600"
+                     style="text-shadow: 3px 3px 25px rgba(0, 0, 0, 0.9); font-size: 3rem; color: #FFFFFF; display: block; font-weight: 300;">R</div>
             </div>
 
             <div class="content-section hidden flex-col items-center justify-start gap-6 opacity-0 scale-95 p-6 overflow-y-auto">
-                <div class="bg-white/95 backdrop-blur-md rounded-3xl p-8 w-full text-center shadow-2xl">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Field officer</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">"Our dedicated field officers play a vital role in ensuring accurate and timely meter readings.</p>
-                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">They visit households across the community, physically inspecting each meter to guarantee reliable data.</p>
-                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">Their commitment keeps the entire utility management process efficient, transparent, and trustworthy."</p>
-                    <p class="italic text-gray-800 font-medium mt-6 mb-8">Dedication that drives accuracy.</p>
+                <div >
+                    <h2 class="text-3xl font-light text-gray-900 mb-8 text-center" style="font-weight: 300;">Administrator</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">“Our administrative staff serve as the guardians of accuracy and order within the Utility Management System. </p>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">Their dedication ensures a seamless experience for every user, forming the</p>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10"> foundation on which the entire system operates"</p>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">Precision that powers progress.</p>
                     <button class="px-16 py-4 bg-black text-white border-none rounded-full text-lg font-semibold cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-800 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
+                            style="margin-left: 1.5cm;"
                             onclick="window.location.href='/login'">login</button>
                 </div>
             </div>
@@ -115,35 +120,35 @@
                  role="button" tabindex="0"
                  onclick="showLogin(2, this)"
                  onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(2, this)">
-                <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800"
+                <img src="/images/6.jpg"
                      alt="Technical"
-                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
-                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">T</div>
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-100">
+                <div class="absolute top-8 left-1/2 -translate-x-1/2 text-5xl font-light text-white pointer-events-none z-50 transition-all duration-600"
+                     style="text-shadow: 3px 3px 25px rgba(0, 0, 0, 0.9); font-size: 3rem; color: #FFFFFF; display: block; font-weight: 300;">T</div>
             </div>
         </div>
 
         <!-- Column 3 - I, E -->
-        <div class="grid-column grid grid-rows-2 gap-4" id="col-3">
+        <div class="grid-column grid gap-4" id="col-3" style="grid-template-rows: 1.5fr 1fr;">
             <div class="grid-item relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-300 group"
                  role="button" tabindex="0"
                  onclick="showLogin(3, this)"
                  onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(3, this)">
-                <img src="https://images.unsplash.com/photo-1581092918484-8313e1f7e8c6?w=800"
-                     alt="Inspector"
-                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
-                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">I</div>
+                <img src="/images/3.jpg"
+                     alt="Customer Service"
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-100">
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-5xl font-light text-white pointer-events-none z-50 transition-all duration-600"
+                     style="text-shadow: 3px 3px 25px rgba(0, 0, 0, 0.9); font-size: 3rem; color: #FFFFFF; display: block; font-weight: 300;">I</div>
             </div>
 
             <div class="content-section hidden flex-col items-center justify-start gap-6 opacity-0 scale-95 p-6 overflow-y-auto">
-                <div class="bg-white/95 backdrop-blur-md rounded-3xl p-8 w-full text-center shadow-2xl">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Field officer</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">"Our dedicated field officers play a vital role in ensuring accurate and timely meter readings.</p>
-                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">They visit households across the community, physically inspecting each meter to guarantee reliable data.</p>
-                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">Their commitment keeps the entire utility management process efficient, transparent, and trustworthy."</p>
-                    <p class="italic text-gray-800 font-medium mt-6 mb-8">Dedication that drives accuracy.</p>
+                <div >
+                    <h2 class="text-3xl font-light text-gray-900 mb-8 text-center" style="font-weight: 300;">Cashier</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">“Our cashiers and billing clerks uphold the financial rhythm of the organization with precision and integrity.</p>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">Through their commitment to accuracy and accountability, they help foster trust and transparency between the utility service and the community it serves.”</p>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">Integrity in every transaction.</p>
                     <button class="px-16 py-4 bg-black text-white border-none rounded-full text-lg font-semibold cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-800 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
+                            style="margin-left: 1.5cm;"
                             onclick="window.location.href='/login'">login</button>
                 </div>
             </div>
@@ -152,35 +157,36 @@
                  role="button" tabindex="0"
                  onclick="showLogin(3, this)"
                  onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(3, this)">
-                <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=800"
+                <img src="/images/7.jpg"
                      alt="Aerial Worker"
-                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
-                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">E</div>
-            </div>
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-100">
+                <div class="absolute top-8 left-1/2 -translate-x-1/2 text-5xl font-light text-white pointer-events-none z-50 transition-all duration-600"
+                     style="text-shadow: 3px 3px 25px rgba(0, 0, 0, 0.9); font-size: 3rem; color: #FFFFFF; display: block; font-weight: 300;">E</div>
+            </div>  
         </div>
 
         <!-- Column 4 - M, R -->
-        <div class="grid-column grid grid-rows-2 gap-4" id="col-4">
+        <div class="grid-column grid gap-4" id="col-4" style="grid-template-rows: 1.5fr 1.2fr;">
             <div class="grid-item relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-300 group"
                  role="button" tabindex="0"
                  onclick="showLogin(4, this)"
-                 onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(4, this)">
-                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800"
-                     alt="Maintenance"
-                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
-                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">M</div>
+                 onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(4 , this)">
+                <img src="/images/6.jpg"
+                     alt="Technician"
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-100">
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-5xl font-light text-white pointer-events-none z-50 transition-all duration-600"
+                     style="text-shadow: 3px 3px 25px rgba(0, 0, 0, 0.9); font-size: 3rem; color: #FFFFFF; display: block; font-weight: 300;">T</div>
             </div>
 
             <div class="content-section hidden flex-col items-center justify-start gap-6 opacity-0 scale-95 p-6 overflow-y-auto">
-                <div class="bg-white/95 backdrop-blur-md rounded-3xl p-8 w-full text-center shadow-2xl">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Field officer</h2>
-                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">"Our dedicated field officers play a vital role in ensuring accurate and timely meter readings.</p>
-                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">They visit households across the community, physically inspecting each meter to guarantee reliable data.</p>
-                    <p class="text-gray-600 leading-relaxed mb-4 text-sm">Their commitment keeps the entire utility management process efficient, transparent, and trustworthy."</p>
-                    <p class="italic text-gray-800 font-medium mt-6 mb-8">Dedication that drives accuracy.</p>
+                <div >
+                    <h2 class="text-3xl font-light text-gray-900 mb-8 text-center" style="font-weight: 300;">Manager</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">“Our managers and decision makers lead with insight, foresight, and strategic clarity. </p>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">Their visionary leadership ensures long-term efficiency, </p>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">sustainability, and growth for the entire utility ecosystem.”</p>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-sm" style=" font-weight: 10">Leadership that shapes tomorrow.</p>
                     <button class="px-16 py-4 bg-black text-white border-none rounded-full text-lg font-semibold cursor-pointer transition-all duration-300 shadow-lg hover:bg-gray-800 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
+                            style="margin-left: 1.5cm;"
                             onclick="window.location.href='/login'">login</button>
                 </div>
             </div>
@@ -189,11 +195,11 @@
                  role="button" tabindex="0"
                  onclick="showLogin(4, this)"
                  onkeydown="if(event.key==='Enter'||event.key===' ')showLogin(4, this)">
-                <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800"
+                <img src="/images/8.jpg"
                      alt="Repair"
-                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-50">
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-bold text-white pointer-events-none z-10 transition-all duration-600"
-                     style="text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);">R</div>
+                     class="w-full h-full object-cover brightness-75 transition-all duration-300 group-hover:scale-105 group-hover:brightness-100">
+                <div class="absolute top-8 left-1/2 -translate-x-1/2 text-5xl font-light text-white pointer-events-none z-50 transition-all duration-600"
+                     style="text-shadow: 3px 3px 25px rgba(0, 0, 0, 0.9); font-size: 3rem; color: #FFFFFF; display: block; font-weight: 300;">R</div>
             </div>
         </div>
     </div>
